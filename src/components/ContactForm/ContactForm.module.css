@@ -1,0 +1,64 @@
+.label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.labelTitle {
+  display: inline-block;
+  width: 50px;
+  margin-right: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+
+input::placeholder {
+  opacity: 0.5;
+  transition: opacity 500ms ease-in-out;
+  font-style: italic;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+  padding: 5px;
+  background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  background-color: #89c403;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  border: none;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  background: #cccccc;
+  color: #666666;
+}
+
+.button:hover {
+  background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color: #77a809;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}

@@ -1,0 +1,21 @@
+.button__delete {
+  margin-left: 10px;
+}
+
+.button__delete:active {
+  margin-left: 10px;
+  background: red;
+  border: none;
+}
+
+.list__item {
+  margin-bottom: 10px;
+}
+
+.item__number {
+  font-weight: bold;
+}
+
+.item__name {
+  display: inline-block;
+}
