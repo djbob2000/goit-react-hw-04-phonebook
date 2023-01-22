@@ -33,7 +33,7 @@ const App = () => {
   };
 
   const changeFilterValue = event => {
-    setFilter({ filter: event.target.value });
+    setFilter(event.target.value);
   };
 
   return (
