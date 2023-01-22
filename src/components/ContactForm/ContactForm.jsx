@@ -24,7 +24,7 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit(name, number);
+    onSubmit({ name, number });
   };
 
   return (
@@ -60,6 +60,10 @@ const ContactForm = ({ onSubmit }) => {
       </button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

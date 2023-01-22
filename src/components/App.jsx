@@ -15,33 +15,20 @@ const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const addContactHandler = (name, number) => {
-    console.log('name', name);
-    console.log('number', number);
-    if (contacts.some(contact => contact.name === name)) {
-      alert(`${name} is already in contacts.`);
-      return true;
-    }
-
-    setContacts(prevState => ({
-      contacts: [
-        { id: nanoid(), name: name.trim(), number },
-        ...prevState.contacts,
-      ],
-    }));
-    return;
+  const addContactHandler = ({ name, number }) => {
+    contacts.some(contact => contact.name === name)
+      ? alert(`${name} is already in contacts.`)
+      : setContacts([{ id: nanoid(), name: name.trim(), number }, ...contacts]);
   };
+  // setContacts(prev => [...prev, newContact]);
 
   const deleteContact = id => {
-    setContacts(prevState => ({
-      contacts: prevState.contacts.filter(el => el.id !== id),
-    }));
+    setContacts(prevState => prevState.filter(item => item.id !== id));
   };
 
   const filteredContactsHandler = () => {
-    const currentFilterValue = filter;
     return contacts.filter(item =>
-      item.name.toLowerCase().includes(currentFilterValue.toLowerCase())
+      item.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
 
